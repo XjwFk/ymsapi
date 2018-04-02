@@ -1,0 +1,106 @@
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Yandex.maps Static API image generator</title>
+    <link rel="stylesheet" type="text/css" href="css/skeleton.min.css">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <style type="text/css">
+        body {
+            margin: 25px;
+        }
+
+        #input {
+            height: 50px;
+            width: 750px;
+            font-family: "Courier New", Courier, monospace;
+        }
+
+        #output {
+            height: 50px;
+            width: 750px;
+            font-family: "Courier New", Courier, monospace;
+        }
+
+        html {
+            margin: 0 auto;
+            min-width: 800px;
+            max-width: 800px;
+        }
+    </style>
+</head>
+<body>
+<h5 align=center>Yandex.maps Static API image generator.</h5>
+<div class="u-full-width" style="float: left; background-color: #f0f0f0;">
+    <div style=" float: left; margin-left: 10px; margin-top: 15px;">
+        Map type: <select id="type">
+        <option value="map">Map</option>
+        <option value="sat">Satellite</option>
+        <option value="sat,skl">Hybrid</option>
+    </select>
+    </div>
+    <div style="margin-top: 5px; margin-left: 250px;">
+        Image size in pixels. Max size is 650x450.<br>
+        <input type="checkbox" id="autoSize"/>&nbsp;<b>Auto</b>&nbsp;&nbsp;&nbsp;&nbsp;
+        Width: <input type="number" max="???" min="???" step="50" id="width" value="650" style="width: 70px"/>
+        &nbsp;&nbsp;&nbsp;&nbsp;Height:
+        <input type="number" max="???" min="???" step="50" value="450" id="height" style="width: 70px"/>
+    </div>
+</div>
+<div class="u-full-width" style="float: left; background-color: #f0f0f0;">
+    &nbsp;&nbsp;Scale: <select id="scale">
+    <option value="18">Auto</option>
+    <option value="0">0</option>
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    <option value="6">6</option>
+    <option value="7">7</option>
+    <option value="8">8</option>
+    <option value="9">9</option>
+    <option value="10">10</option>
+    <option value="11">11</option>
+    <option value="12">12</option>
+    <option value="13">13</option>
+    <option value="14">14</option>
+    <option value="15">15</option>
+    <option value="16">16</option>
+    <option value="17">17</option>
+</select>
+    &nbsp;&nbsp;&nbsp;
+    Language: <select id="language">
+    <option value="ru_RU">Russian</option>
+    <option value="en_US">English USA</option>
+    <option value="en_RU">English UK</option>
+    <option value="uk_UA">Ukrainian</option>
+    <option value="tr_TR">Turkish</option>
+</select>&nbsp;&nbsp;&nbsp;
+    Mark type: <input type="text" value="pm2rd" id="mark" style="width: 70px"/>&nbsp;<select id="markSize"
+                                                                                             style="width: 95px">
+    <option value="s">small</option>
+    <option value="m" selected>medium</option>
+    <option value="l">big</option>
+</select>&nbsp;<a
+        href="https://tech.yandex.ru/maps/doc/staticapi/1.x/dg/concepts/markers-docpage/">options</a> in
+    Russian.
+
+<div class="u-full-width" style="margin-top: 5px; float: left;">
+    &nbsp;&nbsp;&nbsp;<b style="color: navy;">Format of coordinates:</b> <select id="format">
+    <option value="1">Longitude TAB Latitude (excel)</option>
+    <option value="2">Name TAB Longitude TAB Latitude (excel)</option>
+    <option value="3">Latitude, Longitude (Yandex or Google)</option>
+    <option value="4">Name TAB Latitude, Longitude (excel & Yandex or Google)</option>
+</select>
+
+    <textarea id="input" placeholder=""></textarea>
+</div>
+</div>
+<div class="u-full-width" id="centerDiv" style="float: left;"></div>
+<div class="u-full-width" id="generateDiv" style="float: left;">
+    <input id="generate" class="button-primary" type="submit" value="generate">
+</div>
+<div id="outDiv" style="float: left"></div>
+</body>
+</html>          
